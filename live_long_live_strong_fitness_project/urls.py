@@ -15,8 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
+    path('', include('app_lllsf.urls')), #whenever create new app come here and add the name of app here
     path('admin/', admin.site.urls),
 ]
+
+# https://www.youtube.com/watch?v=i2SnKgCiJwI deploying to heroku
