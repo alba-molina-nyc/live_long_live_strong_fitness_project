@@ -13,6 +13,12 @@
   <link href="static/assets/img/favicon.png" rel="icon">
   <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+
+  <!-- Font Awesome -->
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -37,7 +43,7 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
+  <!-- ======= 🚧 Header 🚧 ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
@@ -86,19 +92,9 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <!-- <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="container text-center text-md-left" data-aos="fade-up">
-      <h1>We are <span>Live Long, Live Strong Fitness</span></h1>
-      <h2>We are a team of dedicated fitness enthusiasts and health experts, here to help you achieve your wellness goals</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
-    </div>
-  </section> -->
-  <!-- End Hero -->
 
 
-
-  <!-- ======= Hero Section ======= -->
+  <!-- ======= ✅ Hero Section ✅ ======= -->
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="background-image: url('{{ hero.image.url }}');">
   <div class="container text-center text-md-left" data-aos="fade-up">
     <h1>{{ hero.title }}</h1>
@@ -110,46 +106,32 @@
 
   <main id="main">
 
-    <!-- ======= What We Do Section ======= -->
-    <section id="what-we-do" class="what-we-do">
-      <div class="container">
+<!-- ======= ✅ What We Do Section ✅ ======= -->
+<section id="what-we-do" class="what-we-do">
+  <div class="container">
 
-        <div class="section-title">
-          <h2>What We Do</h2>
-          <p>Magnam dolores commodi suscipit consequatur ex aliquid</p>
+    <div class="section-title">
+      <h2>What We Do</h2>
+      <p>{{ about_us.description }}</p>
+    </div>
+
+    <div class="row">
+      {% for service in services %}
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="icon-box">
+          <div class="icon"><i class="{{ service.icon_class }}"></i></div>
+          <h4><a href="">{{ service.title }}</a></h4>
+          <p>{{ service.description }}</p>
         </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-            </div>
-          </div>
-
-        </div>
-
       </div>
-    </section><!-- End What We Do Section -->
+      {% endfor %}
 
-<!-- ======= About Section ======= -->
+    </div>
+
+  </div>
+</section><!-- End What We Do Section -->
+
+<!-- ======= ✅ About Section ✅ ======= -->
 <section id="about" class="about">
   <div class="container">
     <div class="row">
@@ -166,34 +148,21 @@
           <li><i class="bx bx-check-double"></i> {{ about_us.bullet_point_two }}</li>
         </ul>
         <div class="row icon-boxes">
+          {% for icon_box in about_us.icon_boxes.all %}
           <div class="col-md-6">
-            <i class="bx bx-receipt"></i>
-            <h4>{{ about_us.icon_box_one_title }}</h4>
-            <p>{{ about_us.icon_box_one_description }}</p>
+            <i class="{{ icon_box.icon_class }}"></i>
+            <h4>{{ icon_box.title }}</h4>
+            <p>{{ icon_box.description }}</p>
           </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <i class="bx bx-cube-alt"></i>
-            <h4>{{ about_us.icon_box_two_title }}</h4>
-            <p>{{ about_us.icon_box_two_description }}</p>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
   </div>
-</section>
-<!-- End About Section -->
+</section><!-- End About Section -->
 
 
-
-<!-- END Alba About Us Section -->
-
-
-
-
-
-
-
-    <!-- ======= Skills Section ======= -->
+    <!-- ======= 🚧 Skills Section🚧 ======= -->
     <section id="skills" class="skills">
       <div class="container">
 
@@ -254,7 +223,7 @@
       </div>
     </section><!-- End Skills Section -->
 
-    <!-- ======= Counts Section ======= -->
+    <!-- ======= 🚧 Counts Section 🚧 ======= -->
     <section id="counts" class="counts">
       <div class="container">
 
@@ -297,7 +266,7 @@
       </div>
     </section><!-- End Counts Section -->
 
-    <!-- ======= Services Section ======= -->
+    <!-- ======= 🚧 Services Section 🚧 ======= -->
     <section id="services" class="services section-bg">
       <div class="container">
 
@@ -354,7 +323,7 @@
       </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= Portfolio Section ======= -->
+    <!-- ======= 🚧 Portfolio Section 🚧======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
 
@@ -516,7 +485,7 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Testimonials Section ======= -->
+    <!-- ======= 🚧 Testimonials Section 🚧 ======= -->
     <section id="testimonials" class="testimonials section-bg">
       <div class="container">
 
@@ -600,7 +569,7 @@
       </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- ======= Team Section ======= -->
+    <!-- ======= 🚧 Team Section 🚧======= -->
     <section id="team" class="team">
       <div class="container">
 
@@ -666,7 +635,7 @@
       </div>
     </section><!-- End Team Section -->
 
-    <!-- ======= Contact Section ======= -->
+    <!-- ======= 🚧 Contact Section 🚧 ======= -->
     <section id="contact" class="contact section-bg">
       <div class="container">
 
@@ -738,7 +707,7 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
+  <!-- ======= 🚧 Footer 🚧 ======= -->
   <footer id="footer">
 
     <div class="footer-top">
