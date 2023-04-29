@@ -22,3 +22,8 @@ To get started with Live Long, Live Strong Fitness, simply create an account on 
 If you have any questions or feedback about Live Long, Live Strong Fitness, please don't hesitate to get in touch with us. You can reach us through our website, or by emailing our support team at support@livelonglivestrongfitness.com.
 
 Thank you for choosing Live Long, Live Strong Fitness! We look forward to helping you achieve your fitness goals and live a healthier, happier life.
+
+![Banner section](README/Banner.png)
+![What we do section](README/Whatwedo.png)
+![About section](README/About.png)
+
