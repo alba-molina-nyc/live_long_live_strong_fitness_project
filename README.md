@@ -26,4 +26,4 @@ Thank you for choosing Live Long, Live Strong Fitness! We look forward to helpin
 ![Banner section](README/Banner.png)
 ![What we do section](README/Whatwedo.png)
 ![About section](README/About.png)
-
+![Models and Backend](README/Models.png)
