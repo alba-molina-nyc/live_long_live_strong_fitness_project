@@ -87,13 +87,26 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+  <!-- <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>We are <span>Live Long, Live Strong Fitness</span></h1>
       <h2>We are a team of dedicated fitness enthusiasts and health experts, here to help you achieve your wellness goals</h2>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
-  </section><!-- End Hero -->
+  </section> -->
+  <!-- End Hero -->
+
+
+
+  <!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="background-image: url('{{ hero.image.url }}');">
+  <div class="container text-center text-md-left" data-aos="fade-up">
+    <h1>{{ hero.title }}</h1>
+    <h2>{{ hero.subtitle }}</h2>
+    <a href="#about" class="btn-get-started scrollto">{{ hero.button_text }}</a>
+  </div>
+</section><!-- End Hero -->
+
 
   <main id="main">
 
