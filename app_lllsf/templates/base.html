@@ -5,26 +5,26 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Lumia Bootstrap Template - Index</title>
+  <title>Live Long, Live Strong Fitness</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="static/assets//img/favicon.png" rel="icon">
-  <link href="static/assets//img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="static/assets//vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="static/assets//vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="static/assets//vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="static/assets//vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="static/assets//vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="static/assets//css/style.css" rel="stylesheet">
+  <link href="static/assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Lumia
@@ -42,9 +42,9 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="index.html">Lumia</a></h1>
+        <h1><a href="index.html">LSLL Fitness</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="static/assets//img/logo.png" alt="" class="img-fluid"></a>-->
+        <!-- <a href="index.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
@@ -89,8 +89,8 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
-      <h1>Welcome to <span>Lumia</span></h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <h1>We are <span>Live Long, Live Strong Fitness</span></h1>
+      <h2>We are a team of dedicated fitness enthusiasts and health experts, here to help you achieve your wellness goals</h2>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->
@@ -136,40 +136,49 @@
       </div>
     </section><!-- End What We Do Section -->
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-6">
-            <img src="static/assets//img/about.jpg" class="img-fluid" alt="">
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        {% if about_us.image %}
+        <img src="{{ about_us.image.url }}" class="img-fluid" alt="">
+        {% endif %}
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0">
+        <h3>{{ about_us.title }}</h3>
+        <p>{{ about_us.description }}</p>
+        <ul>
+          <li><i class="bx bx-check-double"></i> {{ about_us.bullet_point_one }}</li>
+          <li><i class="bx bx-check-double"></i> {{ about_us.bullet_point_two }}</li>
+        </ul>
+        <div class="row icon-boxes">
+          <div class="col-md-6">
+            <i class="bx bx-receipt"></i>
+            <h4>{{ about_us.icon_box_one_title }}</h4>
+            <p>{{ about_us.icon_box_one_description }}</p>
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <h3>About Us</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            </ul>
-            <div class="row icon-boxes">
-              <div class="col-md-6">
-                <i class="bx bx-receipt"></i>
-                <h4>Corporis voluptates sit</h4>
-                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-              </div>
-              <div class="col-md-6 mt-4 mt-md-0">
-                <i class="bx bx-cube-alt"></i>
-                <h4>Ullamco laboris nisi</h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-              </div>
-            </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <i class="bx bx-cube-alt"></i>
+            <h4>{{ about_us.icon_box_two_title }}</h4>
+            <p>{{ about_us.icon_box_two_description }}</p>
           </div>
         </div>
-
       </div>
-    </section><!-- End About Section -->
+    </div>
+  </div>
+</section>
+<!-- End About Section -->
+
+
+
+<!-- END Alba About Us Section -->
+
+
+
+
+
+
 
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills">
@@ -357,8 +366,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
             <div class="portfolio-wrap">
               <figure>
-                <img src="static/assets//img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                <a href="static/assets//img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="link-preview portfolio-lightbox" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="static/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                <a href="static/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="link-preview portfolio-lightbox" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -372,8 +381,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="static/assets//img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                <a href="static/assets//img/portfolio/portfolio-2.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="static/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                <a href="static/assets/img/portfolio/portfolio-2.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -387,8 +396,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="static/assets//img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                <a href="static/assets//img/portfolio/portfolio-3.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="static/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                <a href="static/assets/img/portfolio/portfolio-3.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -402,8 +411,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
             <div class="portfolio-wrap">
               <figure>
-                <img src="static/assets//img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                <a href="static/assets//img/portfolio/portfolio-4.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="static/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                <a href="static/assets/img/portfolio/portfolio-4.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -417,8 +426,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="static/assets//img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                <a href="static/assets//img/portfolio/portfolio-5.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="static/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                <a href="static/assets/img/portfolio/portfolio-5.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -432,8 +441,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="static/assets//img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                <a href="static/assets//img/portfolio/portfolio-6.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="static/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                <a href="static/assets/img/portfolio/portfolio-6.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -447,8 +456,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
             <div class="portfolio-wrap">
               <figure>
-                <img src="static/assets//img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                <a href="static/assets//img/portfolio/portfolio-7.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="static/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                <a href="static/assets/img/portfolio/portfolio-7.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -462,8 +471,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="static/assets//img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                <a href="static/assets//img/portfolio/portfolio-8.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="static/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                <a href="static/assets/img/portfolio/portfolio-8.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -477,8 +486,8 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
               <figure>
-                <img src="static/assets//img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                <a href="static/assets//img/portfolio/portfolio-9.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                <img src="static/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                <a href="static/assets/img/portfolio/portfolio-9.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
               </figure>
 
@@ -513,7 +522,7 @@
                   Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="static/assets//img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <img src="static/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
               </div>
@@ -526,7 +535,7 @@
                   Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="static/assets//img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <img src="static/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
               </div>
@@ -539,7 +548,7 @@
                   Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="static/assets//img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <img src="static/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
               </div>
@@ -552,7 +561,7 @@
                   Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="static/assets//img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <img src="static/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
               </div>
@@ -565,7 +574,7 @@
                   Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="static/assets//img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <img src="static/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
               </div>
@@ -590,7 +599,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="static/assets//img/team/team-1.jpg" alt="">
+              <img src="static/assets/img/team/team-1.jpg" alt="">
               <h4>Walter White</h4>
               <span>Chief Executive Officer</span>
               <p>
@@ -607,7 +616,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="static/assets//img/team/team-2.jpg" alt="">
+              <img src="static/assets/img/team/team-2.jpg" alt="">
               <h4>Sarah Jhinson</h4>
               <span>Product Manager</span>
               <p>
@@ -624,7 +633,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="static/assets//img/team/team-3.jpg" alt="">
+              <img src="static/assets/img/team/team-3.jpg" alt="">
               <h4>William Anderson</h4>
               <span>CTO</span>
               <p>
@@ -795,16 +804,16 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="static/assets//vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="static/assets//vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="static/assets//vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="static/assets//vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="static/assets//vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="static/assets//vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="static/assets//vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="static/assets//js/main.js"></script>
+  <script src="static/assets/js/main.js"></script>
 
 </body>
 

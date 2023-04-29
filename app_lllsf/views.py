@@ -1,9 +1,9 @@
 from django.shortcuts import render
+from .models import AboutUs
 
-def home(request):
-    # Logic to retrieve data and render it in the template goes here
+def about_us(request):
+    about_us = AboutUs.objects.first()
     context = {
-        'title': 'Welcome to My Website',
-        'message': 'Hello, world!'
+        'about_us': about_us,
     }
-    return render(request, 'home.html', context)
+    return render(request, 'base.html', context)

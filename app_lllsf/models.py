@@ -1,3 +1,15 @@
 from django.db import models
 
-# Create your models here.
+class AboutUs(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    bullet_point_one = models.CharField(max_length=200)
+    bullet_point_two = models.CharField(max_length=200)
+    icon_box_one_title = models.CharField(max_length=200)
+    icon_box_one_description = models.TextField()
+    icon_box_two_title = models.CharField(max_length=200)
+    icon_box_two_description = models.TextField()
+    image = models.ImageField(upload_to='about_images/')
+
+    def __str__(self):
+        return self.title
