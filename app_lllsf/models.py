@@ -69,3 +69,37 @@ class FitnessBlog(models.Model):
     
     def __str__(self):
         return self.title
+
+
+
+
+class RecipeItem(models.Model):
+    BREAKFAST = 'breakfast'
+    LUNCH = 'lunch'
+    DINNER = 'dinner'
+    SNACK = 'snack'
+    ITEM_TYPE_CHOICES = [
+        (BREAKFAST, 'Breakfast'),
+        (LUNCH, 'Lunch'),
+        (DINNER, 'Dinner'),
+        (SNACK, 'Snack'),
+    ]
+    name = models.CharField(max_length=200)
+    item_type = models.CharField(max_length=10, choices=ITEM_TYPE_CHOICES)
+    image = models.ImageField(upload_to='portfolio_images/')
+    preview_link = models.URLField()
+    details_link = models.URLField()
+
+    def __str__(self):
+        return f'{self.name} - {self.item_type}'
+    
+    
+
+
+
+# class RecipeItem(models.Model):
+#     name = models.CharField(max_length=200)
+#     item_type = models.CharField(max_length=10, choices=[('app', 'App'), ('card', 'Card'), ('web', 'Web')])
+#     image = models.ImageField(upload_to='portfolio_images/')
+#     preview_link = models.URLField()
+#     details_link = models.URLField()
