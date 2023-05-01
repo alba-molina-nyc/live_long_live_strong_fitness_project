@@ -235,7 +235,7 @@
       <div class="col-md-6 mt-4 {% if loop.index is even %}mt-lg-0{% endif %}">
         <div class="icon-box">
           <i class="{{ fitnessblog.icon }}"></i>
-          <h4><a href="#">{{ fitnessblog.title }}</a></h4>
+          <h4><a href="{% url 'blog_detail' fitnessblog.id %}">{{ fitnessblog.title }}</a></h4>
           <p>{{ fitnessblog.description }}</p>
         </div>
       </div>
@@ -244,13 +244,13 @@
   </div>
 </section><!-- End Services Section -->
 
-<!-- ======= Portfolio Section ======= -->
+<!-- ======= ✅ Recipe Section ✅ ======= -->
 <section id="portfolio" class="portfolio">
   <div class="container">
 
     <div class="section-title">
       <h2>Recipe</h2>
-      <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit</p>
+      <p>Explore our recipe section, try out a few of our recipes, and let us know what you think. We're always adding new recipes, so be sure to check back often for more inspiration and ideas!</p>
     </div>
 
     <div class="row">
@@ -293,7 +293,7 @@
     
         <div class="section-title">
           <h2>Testimonials</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
+          <p>Hear what our clients have to say, directly from our clients</p>
         </div>
     
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">

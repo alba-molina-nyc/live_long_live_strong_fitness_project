@@ -1,4 +1,4 @@
-from .models import AboutUs, Hero, Service, IconBox, Exercise, Testimonial, FitnessBlog, RecipeItem
+from .models import AboutUs, Hero, Service, IconBox, Exercise, Testimonial, FitnessBlog, Category, RecipeItem
 from django.contrib import admin
 
 admin.site.register(AboutUs)
@@ -9,3 +9,4 @@ admin.site.register(Exercise)
 admin.site.register(Testimonial)
 admin.site.register(FitnessBlog)
 admin.site.register(RecipeItem)
+admin.site.register(Category)

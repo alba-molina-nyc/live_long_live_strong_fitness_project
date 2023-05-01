@@ -62,13 +62,54 @@ class Testimonial(models.Model):
         return self.name
 
 
+# class FitnessBlog(models.Model):
+#     title = models.CharField(max_length=255)
+#     description = models.TextField()
+#     icon = models.CharField(max_length=50)
+#     image = models.ImageField(upload_to='fitnessblogs/')
+#     def __init__(self, category, date, title, content, image):
+#         category = category
+
+    
+#     def __str__(self):
+#         return self.title
+
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
 class FitnessBlog(models.Model):
+    CATEGORIES = (
+        ('nutrition', 'Nutrition'),
+        ('exercise', 'Exercise'),
+        ('lifestyle', 'Lifestyle'),
+    )
+
     title = models.CharField(max_length=255)
+    author = models.CharField(max_length=255, default='')
     description = models.TextField()
     icon = models.CharField(max_length=50)
-    
+    image_1 = models.ImageField(upload_to='fitnessblogs/', default='default_image.jpg')
+    image_2 = models.ImageField(upload_to='fitnessblogs/', default='default_image.jpg')
+    category = models.CharField(max_length=20, choices=CATEGORIES, default='')
+    # add created
+    # add edited
+    paragraph_1 = models.TextField(blank=True)
+    paragraph_2 = models.TextField(blank=True)
+    paragraph_3 = models.TextField(blank=True)
+    paragraph_4 = models.TextField(blank=True)
+    paragraph_5 = models.TextField(blank=True)
+    paragraph_6 = models.TextField(blank=True)
+    paragraph_7 = models.TextField(blank=True)
+    paragraph_8 = models.TextField(blank=True)
+    paragraph_9 = models.TextField(blank=True)
+
     def __str__(self):
         return self.title
+
 
 
 

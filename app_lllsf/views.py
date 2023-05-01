@@ -27,5 +27,18 @@ def base(request):
     }
     return render(request, 'base.html', context)
 
+# def blog_detail(request, pk):
+#     fitnessblogs = FitnessBlog.objects.all()
+#     blog_detail = FitnessBlog.objects.get(id= pk)
+#     return render(request, 'blog_detail.html', {
+#         'fitnessblogs':fitnessblogs, 
+#         'blog_detail':blog_detail,
+#         })
+
+def blog_detail(request, pk):
+    blog_detail = FitnessBlog.objects.get(id=pk)
+    return render(request, 'blog_detail.html', {'blog_detail': blog_detail})
+
+
 
 # https://fontawesome.com/icons/dumbbell?f=classic&s=solid
