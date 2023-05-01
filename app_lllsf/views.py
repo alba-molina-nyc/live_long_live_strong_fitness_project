@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import AboutUs, Hero, Service, Exercise, Testimonial, FitnessBlog, RecipeItem
+from .models import AboutUs, Hero, Service, Exercise, Testimonial, FitnessBlog, RecipeItem, Category
 
 def base(request):
     about_us = AboutUs.objects.first()
@@ -27,17 +27,12 @@ def base(request):
     }
     return render(request, 'base.html', context)
 
-# def blog_detail(request, pk):
-#     fitnessblogs = FitnessBlog.objects.all()
-#     blog_detail = FitnessBlog.objects.get(id= pk)
-#     return render(request, 'blog_detail.html', {
-#         'fitnessblogs':fitnessblogs, 
-#         'blog_detail':blog_detail,
-#         })
-
 def blog_detail(request, pk):
     blog_detail = FitnessBlog.objects.get(id=pk)
-    return render(request, 'blog_detail.html', {'blog_detail': blog_detail})
+    print(blog_detail)
+    category = Category.objects.all()
+
+    return render(request, 'blog_detail.html', {'blog_detail': blog_detail, 'category': category})
 
 
 
