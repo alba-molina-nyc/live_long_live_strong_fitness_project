@@ -106,9 +106,6 @@
 
   <main id="main">
 
-      {% block main %}
-      {% endblock %}
-
 
 <!-- ======= ✅ What We Do Section ✅ ======= -->
 <section id="what-we-do" class="what-we-do">
@@ -124,7 +121,7 @@
       <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
         <div class="icon-box">
           <div class="icon"><i class="{{ service.icon_class }}"></i></div>
-          <h4><a href="">{{ service.title }}</a></h4>
+          <h4><a href="{% url 'service_detail' service.id %}">{{ service.title }}</a></h4>
           <p>{{ service.description }}</p>
         </div>
       </div>

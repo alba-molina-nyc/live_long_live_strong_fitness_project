@@ -29,6 +29,7 @@ class Hero(models.Model):
 
     def __str__(self):
         return self.title
+    
 # In this model, we have defined a Service class with three fields: title, description, and icon_class. title is a character field that will hold the title of the service. description is a text field that will hold the description of the service. icon_class is a character field that will hold the class of the icon to be displayed for the service.
 class Service(models.Model):
     title = models.CharField(max_length=200)
@@ -60,19 +61,6 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.name
-
-
-# class FitnessBlog(models.Model):
-#     title = models.CharField(max_length=255)
-#     description = models.TextField()
-#     icon = models.CharField(max_length=50)
-#     image = models.ImageField(upload_to='fitnessblogs/')
-#     def __init__(self, category, date, title, content, image):
-#         category = category
-
-    
-#     def __str__(self):
-#         return self.title
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
