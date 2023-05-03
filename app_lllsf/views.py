@@ -40,4 +40,9 @@ def service_detail(request, pk):
 
     return render(request, 'service_detail.html', {'service_detail': service_detail,})
 
+
+def recipe_detail(request, pk):
+    recipe_detail = RecipeItem.objects.get(id=pk)
+
+    return render(request, 'recipe_detail.html', {'recipe_detail': recipe_detail,})
 # https://fontawesome.com/icons/dumbbell?f=classic&s=solid

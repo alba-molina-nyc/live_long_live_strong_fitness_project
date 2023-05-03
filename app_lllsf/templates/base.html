@@ -272,11 +272,11 @@
             <figure>
               <img src="{{ item.image.url }}" class="img-fluid" alt="{{ item.name }}">
               <a href="{{ item.image.url }}" data-gallery="portfolioGallery" class="link-preview portfolio-lightbox" title="Preview"><i class="bx bx-plus"></i></a>
-              <a href="{{ item.details_link }}" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'recipe_detail' item.id %}" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
             </figure>
 
             <div class="portfolio-info">
-              <h4><a href="{{ item.details_link }}">{{ item.name }}</a></h4>
+              <h4><a href="{% url 'recipe_detail' item.id %}">{{ item.name }}</a></h4>
               <p>{{ item.item_type|title }}</p>
             </div>
           </div>
