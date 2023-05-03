@@ -95,8 +95,6 @@ class FitnessBlog(models.Model):
     image_1 = models.ImageField(upload_to='fitnessblogs/', default='default_image.jpg')
     image_2 = models.ImageField(upload_to='fitnessblogs/', default='default_image.jpg')
     category = models.CharField(max_length=20, choices=CATEGORIES, default='')
-    # add created
-    # add edited
     paragraph_1 = models.TextField(blank=True)
     paragraph_2 = models.TextField(blank=True)
     paragraph_3 = models.TextField(blank=True)
