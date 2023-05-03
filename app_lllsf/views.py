@@ -46,3 +46,6 @@ def recipe_detail(request, pk):
 
     return render(request, 'recipe_detail.html', {'recipe_detail': recipe_detail,})
 # https://fontawesome.com/icons/dumbbell?f=classic&s=solid
+
+
+# TODO: contact function, paypal pay, paypal giftcard, get rid of lumia, change colors to dark blue and yellow
