@@ -1,17 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Live Long, Live Strong Fitness</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="static/assets/img/favicon.png" rel="icon">
-  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" href="{% static 'assets/img/favicon.png' %}">
+  <link rel="apple-touch-icon" href="{% static 'assets/img/apple-touch-icon.png' %}">
 
 
   <!-- Font Awesome -->
@@ -23,14 +26,16 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="static/assets/css/style.css" rel="stylesheet">
+  <!-- Custom CSS Files -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- Custom JS Files -->
+  <script type="text/javascript" src="{% static 'assets/js/main.js' %}"></script>
 
   <!-- =======================================================
   * Template Name: Lumia
@@ -41,8 +46,8 @@
   ======================================================== -->
 </head>
 
-<body>
 
+<body>
   <!-- ======= 🚧 Header 🚧 ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
@@ -92,8 +97,6 @@
     </div>
   </header><!-- End Header -->
 
-
-
   <!-- ======= ✅ Hero Section ✅ ======= -->
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="background-image: url('{{ hero.image.url }}');">
   <div class="container text-center text-md-left" data-aos="fade-up">
@@ -103,6 +106,9 @@
   </div>
 </section><!-- End Hero -->
 
+{% block content %}{% endblock %}
+<script src="{% static 'assets/js/script.js' %}"></script>
+{% block extra_scripts %}{% endblock %}
 
   <main id="main">
 
@@ -553,3 +559,4 @@
 </body>
 
 </html>
+
