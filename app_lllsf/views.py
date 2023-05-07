@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import AboutUs, Hero, Service, Exercise, Testimonial, FitnessBlog, RecipeItem, Category
+from .models import AboutUs, Hero, Service, Exercise, Testimonial, FitnessBlog, RecipeItem, Category, FitnessBlogComment
+from .forms import CommentForm
 
 def base(request):
     about_us = AboutUs.objects.first()
@@ -30,8 +31,20 @@ def base(request):
 def blog_detail(request, pk):
     blog_detail = FitnessBlog.objects.get(id=pk)
     category = Category.objects.all()
+    comments = FitnessBlogComment.objects.filter(parent_comment=None, blog=blog_detail)
 
-    return render(request, 'blog_detail.html', {'blog_detail': blog_detail, 'category': category})
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.blog = blog_detail
+            comment.save()
+            form = CommentForm()
+    else:
+        form = CommentForm()
+
+    return render(request, 'blog_detail.html', {'blog_detail': blog_detail, 'category': category, 'comments': comments, 'form': form})
+
 
 
 

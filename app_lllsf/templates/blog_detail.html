@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>ZenBlog Bootstrap Template - Index</title>
+  <title>Blog: Live Long, Live Strong</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -51,7 +51,7 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>ZenBlog</h1>
+        <h1>Live Long, Live Strong Blog</h1>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -119,17 +119,20 @@
               <p><span class="firstcharacter">A</span>{{ blog_detail.description }}</p>
 
               <figure class="my-4">
-                <img src="" alt="" class="img-fluid">
-                <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, odit? </figcaption>
+                {% if blog_detail.image_1 %}
+                <img src="{{ blog_detail.image_1.url }}" class="img-fluid" alt="">
+                {% endif %}
+              
+ 
               </figure>
-              <p>^^^^^^^^^^{{blog_detail.paragraph_1 }}</p>
               <p>{{blog_detail.paragraph_1 }}</p>
               <p>{{blog_detail.paragraph_2 }}</p>
               <p>{{blog_detail.paragraph_3 }}</p>
               <p>{{blog_detail.paragraph_4 }}.</p>
               <figure class="my-4">
-                <img src="{{ blog_detail.image_1 }}" alt="" class="img-fluid">
-                <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, odit? </figcaption>
+                {% if blog_detail.image_2 %}
+                <img src="{{ blog_detail.image_2.url }}" class="img-fluid" alt="">
+                {% endif %}                
               </figure>
               <p>{{blog_detail.paragraph_5 }}</p>
               <p>{{blog_detail.paragraph_6 }}</p>
@@ -138,79 +141,56 @@
 
             </div><!-- End Single Post Content -->
        
-            <!-- ======= Comments ======= -->
-            <div class="comments">
-              <h5 class="comment-title py-4">2 Comments</h5>
-              <div class="comment d-flex mb-4">
-                <div class="flex-shrink-0">
-                  <div class="avatar avatar-sm rounded-circle">
-                    <img class="avatar-img" src="" alt="" class="img-fluid">
-                  </div>
-                </div>
-                <div class="flex-grow-1 ms-2 ms-sm-3">
-                  <div class="comment-meta d-flex align-items-baseline">
-                    <h6 class="me-2">Jordan Singer</h6>
-                    <span class="text-muted">2d</span>
-                  </div>
-                  <div class="comment-body">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non minima ipsum at amet doloremque qui magni, placeat deserunt pariatur itaque laudantium impedit aliquam eligendi repellendus excepturi quibusdam nobis esse accusantium.
-                  </div>
+<!-- ======= Comments ======= -->
+<div class="comments">
+  <h5 class="comment-title py-4">{{ comments.count }} Comments</h5>
 
-                  <div class="comment-replies bg-light p-3 mt-3 rounded">
-                    <h6 class="comment-replies-title mb-4 text-muted text-uppercase">2 replies</h6>
+  {% for comment in comments %}
+  <div class="comment d-flex mb-4">
+    <div class="flex-shrink-0">
+      <div class="avatar avatar-sm rounded-circle">
+        <img class="avatar-img" src="" alt="" class="img-fluid">
+      </div>
+    </div>
+    <div class="flex-grow-1 ms-2 ms-sm-3">
+      <div class="comment-meta d-flex align-items-baseline">
+        <h6 class="me-2">{{ comment.name }}</h6>
+        <span class="text-muted">{{ comment.date_posted|date:"F d, Y" }}</span>
+      </div>
+      <div class="comment-body">
+        {{ comment.comment_body }}
+      </div>
 
-                    <div class="reply d-flex mb-4">
-                      <div class="flex-shrink-0">
-                        <div class="avatar avatar-sm rounded-circle">
-                          <img class="avatar-img" src="" alt="" class="img-fluid">
-                        </div>
-                      </div>
-                      <div class="flex-grow-1 ms-2 ms-sm-3">
-                        <div class="reply-meta d-flex align-items-baseline">
-                          <h6 class="mb-0 me-2">Brandon Smith</h6>
-                          <span class="text-muted">2d</span>
-                        </div>
-                        <div class="reply-body">
-                          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="reply d-flex">
-                      <div class="flex-shrink-0">
-                        <div class="avatar avatar-sm rounded-circle">
-                          <img class="avatar-img" src="" alt="" class="img-fluid">
-                        </div>
-                      </div>
-                      <div class="flex-grow-1 ms-2 ms-sm-3">
-                        <div class="reply-meta d-flex align-items-baseline">
-                          <h6 class="mb-0 me-2">James Parsons</h6>
-                          <span class="text-muted">1d</span>
-                        </div>
-                        <div class="reply-body">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolore sed eos sapiente, praesentium.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="comment d-flex">
-                <div class="flex-shrink-0">
-                  <div class="avatar avatar-sm rounded-circle">
-                    <img class="avatar-img" src="" alt="" class="img-fluid">
-                  </div>
-                </div>
-                <div class="flex-shrink-1 ms-2 ms-sm-3">
-                  <div class="comment-meta d-flex">
-                    <h6 class="me-2">Santiago Roberts</h6>
-                    <span class="text-muted">4d</span>
-                  </div>
-                  <div class="comment-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto laborum in corrupti dolorum, quas delectus nobis porro accusantium molestias sequi.
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Comments -->
+      {% if comment.replies.count > 0 %}
+      <div class="comment-replies bg-light p-3 mt-3 rounded">
+        <h6 class="comment-replies-title mb-4 text-muted text-uppercase">{{ comment.replies.count }} replies</h6>
+
+        {% for reply in comment.replies.all %}
+        <div class="reply d-flex mb-4">
+          <div class="flex-shrink-0">
+            <div class="avatar avatar-sm rounded-circle">
+              <img class="avatar-img" src="" alt="" class="img-fluid">
+            </div>
+          </div>
+          <div class="flex-grow-1 ms-2 ms-sm-3">
+            <div class="reply-meta d-flex align-items-baseline">
+              <h6 class="mb-0 me-2">{{ reply.name }}</h6>
+              <span class="text-muted">{{ reply.date_posted|date:"F d, Y" }}</span>
+            </div>
+            <div class="reply-body">
+              {{ reply.comment_body }}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+
+</div><!-- End Comments -->
+
 
             <!-- ======= Comments Form ======= -->
             <div class="row justify-content-center mt-5">

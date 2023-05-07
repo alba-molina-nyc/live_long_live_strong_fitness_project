@@ -98,6 +98,17 @@ class FitnessBlog(models.Model):
 
 
 
+class FitnessBlogComment(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    date_posted = models.DateTimeField(auto_now_add=True)
+    comment_body = models.TextField()
+    parent_comment = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, related_name='replies')
+    blog = models.ForeignKey(FitnessBlog, on_delete=models.CASCADE, related_name='comments', default=1)
+
+    def __str__(self):
+        return f"{self.name} - {self.date_posted}"
+
 
 
 class RecipeItem(models.Model):
