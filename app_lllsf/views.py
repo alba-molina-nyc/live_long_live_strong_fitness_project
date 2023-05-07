@@ -28,6 +28,13 @@ def base(request):
     }
     return render(request, 'base.html', context)
 
+from django.shortcuts import render, redirect
+from django.urls import reverse
+
+from .models import FitnessBlog, FitnessBlogComment
+from .forms import CommentForm
+
+
 def blog_detail(request, pk):
     blog_detail = FitnessBlog.objects.get(id=pk)
     category = Category.objects.all()
@@ -43,6 +50,7 @@ def blog_detail(request, pk):
             comment_body=comment_body,
             blog=blog_detail
         )
+        return redirect(reverse('blog_detail', kwargs={'pk': pk}))
 
     comment_form = CommentForm()
 
