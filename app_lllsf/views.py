@@ -34,19 +34,19 @@ def blog_detail(request, pk):
     comments = FitnessBlogComment.objects.filter(parent_comment=None, blog=blog_detail)
 
     if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.blog = blog_detail
-            comment.save()
-            form = CommentForm()
-    else:
-        form = CommentForm()
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        comment_body = request.POST.get('comment')
+        comment = FitnessBlogComment.objects.create(
+            name=name,
+            email=email,
+            comment_body=comment_body,
+            blog=blog_detail
+        )
 
-    return render(request, 'blog_detail.html', {'blog_detail': blog_detail, 'category': category, 'comments': comments, 'form': form})
+    comment_form = CommentForm()
 
-
-
+    return render(request, 'blog_detail.html', {'blog_detail': blog_detail, 'category': category, 'comments': comments, 'comment_form': comment_form})
 
 def service_detail(request, pk):
     service_detail = Service.objects.get(id=pk)
