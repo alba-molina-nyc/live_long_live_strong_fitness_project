@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio Details - Lumia Bootstrap Template</title>
+  <title>Recipes - {{ recipe_detail.name }}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -43,7 +43,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="index.html">Lumia</a></h1>
+        <h1><a href="index.html">Live Long, Live Strong Fitness</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="{% static 'assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -94,7 +94,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfoio Details</h2>
+          <h2>Recipes</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>Portfoio Details</li>
@@ -115,15 +115,15 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" alt="">
+                  <img src="{{ recipe_detail.image.url }}" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" alt="">
+                  <img src="{{ recipe_detail.image }}" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" alt="">
+                  <img src="{{ recipe_detail.image }}" alt="">
                 </div>
 
               </div>
@@ -135,7 +135,6 @@
             <div class="portfolio-info">
               <h3>{{ recipe_detail.name }}</h3>
               <ul>
-                <li>{{ recipe_detail.description }}</li>
                 <li><strong>Ingredients</strong></li>
                 <li>{{ recipe_detail.ingredient_1 }}</li>
                 <li>{{ recipe_detail.ingredient_2 }}</li>
@@ -147,16 +146,20 @@
                 <li>{{ recipe_detail.ingredient_8 }}</li>
                 <li>{{ recipe_detail.ingredient_9 }}</li>
                 <li>{{ recipe_detail.ingredient_10 }}</li>
-
-
-
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
+              <h2>{{ recipe_detail.description }}</h2>
+              <p>{{ recipe_detail.paragraph_1 }}</p>
+              <p>{{ recipe_detail.paragraph_2 }}</p>
+              <p>{{ recipe_detail.paragraph_3 }}</p>
+              <p>{{ recipe_detail.paragraph_4 }}</p>
+              <p>{{ recipe_detail.paragraph_5 }}</p>
+              <p>{{ recipe_detail.paragraph_6 }}</p>
+              <p>{{ recipe_detail.paragraph_7 }}</p>
+              <p>{{ recipe_detail.paragraph_8 }}</p>
+              <p>{{ recipe_detail.paragraph_9 }}</p>
+
             </div>
           </div>
 
@@ -175,7 +178,7 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Lumia</h3>
+            <h3>Live Long, Live Strong Fitness</h3>
             <p>
               A108 Adam Street <br>
               New York, NY 535022<br>
