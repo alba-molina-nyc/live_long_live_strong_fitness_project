@@ -1,5 +1,5 @@
 from django import forms
-from .models import FitnessBlogComment
+from .models import FitnessBlogComment, ContactUs
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -9,4 +9,17 @@ class CommentForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your name'}),
             'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your email'}),
             'comment_body': forms.Textarea(attrs={'class': 'form-control', 'rows': '5', 'placeholder': 'Enter your comment'}),
+        }
+
+
+class ContactUsForm(forms.ModelForm):
+    class Meta:
+        model = ContactUs
+        fields = ['name', 'email', 'phone', 'subject', 'message']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Name'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your Email'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Phone Number'}),
+            'subject': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Subject'}),
+            'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Message'}),
         }

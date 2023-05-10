@@ -157,4 +157,13 @@ class RecipeItem(models.Model):
     def __str__(self):
         return f'{self.name} - {self.item_type}'
     
-    
+
+class ContactUs(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=11)
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+
+    def __str__(self):
+        return f'{self.subject} - {self.name}'
