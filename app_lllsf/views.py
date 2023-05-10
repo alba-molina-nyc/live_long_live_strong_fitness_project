@@ -7,6 +7,14 @@ from django.core.mail import send_mail # contactform
 from django.conf import settings # contactform
 from django.contrib import messages # contactform
 
+def contact_us(request):
+    form = ContactUsForm(request.POST or None)
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+        return render(request, 'contact_success.html')
+    context = {'form': form}
+    return render(request, 'contact_us.html', context)
+
 
 def base(request):
     about_us = AboutUs.objects.first()
@@ -16,6 +24,7 @@ def base(request):
     testimonials = Testimonial.objects.all()
     fitnessblogs = FitnessBlog.objects.all()
     items = RecipeItem.objects.all()
+    form = ContactUsForm(request.POST or None)
 
     context = {
         'about_us': about_us,
@@ -26,67 +35,11 @@ def base(request):
         'fitnessblogs': fitnessblogs,
         'ITEM_TYPE_CHOICES': RecipeItem.ITEM_TYPE_CHOICES,
         'items': items,
-        'contact_form': ContactUsForm(),
+        'form': form,
     }
-    if request.method == 'POST':
-        contact_form = ContactUsForm(request.POST)
-        if contact_form.is_valid():
-            contact_form.save()
-            messages.success(request, 'Your message has been sent. Thank you!')
-            # return redirect('base')
-        # else:
-        #     messages.error(request, 'Error')
+
     return render(request, 'base.html', context)
-
-
-# def base(request):
-#     about_us = AboutUs.objects.first()
-#     hero = Hero.objects.first()
-#     services = Service.objects.all()
-#     exercises = Exercise.objects.all()
-#     testiminials = Testimonial.objects.all()
-#     fitnessblogs = FitnessBlog.objects.all()
-#     items = RecipeItem.objects.all()
-
-#     context = {
-#         'about_us': about_us,
-#         'hero': hero,
-#         'services': services,
-#         'exercises': exercises,
-#         'testimonials': testiminials,
-#         'fitnessblogs': fitnessblogs,
-#         'ITEM_TYPE_CHOICES': RecipeItem.ITEM_TYPE_CHOICES,
-#         'items': items,
-        
-    
-        
-  
-        
-#     }
-#     return render(request, 'base.html', context)
-
-
-# def contact(request):
-#     if request.method == 'POST':
-#         name = request.POST.get('name')
-#         email = request.POST.get('email')
-#         phone = request.POST.get('phone')
-#         subject = request.POST.get('subject')
-#         message = request.POST.get('message')
-
-#         # Save contact information to database
-#         contact_us = ContactUs(name=name, email=email, phone=phone, subject=subject, message=message)
-#         contact_us.save()
-#         print(contact_us.save())
-
-#         messages.success(request, 'Your message has been sent. Thank you!')
-#         print('your message has been sent thank you')
-#         return redirect('contact')
-
-#     return render(request, 'base.html')
-
-
-
+   
 
 def blog_detail(request, pk):
     blog_detail = FitnessBlog.objects.get(id=pk)
@@ -123,35 +76,5 @@ def recipe_detail(request, pk):
 
 
 # TODO: contact function, paypal pay, paypal giftcard, get rid of lumia, change colors to dark blue and yellow
-
-
-
-# def contact(request):
-#     if request.method == 'POST':
-#         name = request.POST.get('name')
-#         email = request.POST.get('email')
-#         phone = request.POST.get('phone')
-#         subject = request.POST.get('subject')
-#         message = request.POST.get('message')
-
-#         # Save contact information to database
-#         contact_us = ContactUs(name=name, email=email, phone=phone, subject=subject, message=message)
-#         contact_us.save()
-#         print(contact_us.save())
-
-#         # Send email
-#         # send_mail(
-#         #     subject + ' from ' + name,
-#         #     message,
-#         #     email,
-#         #     [settings.DEFAULT_FROM_EMAIL],
-#         #     fail_silently=False,
-#         # )
-
-#         messages.success(request, 'Your message has been sent. Thank you!')
-#         print('your message has been sent thank you')
-#         return redirect('contact')
-
-#     return render(request, 'base.html')
 
 
