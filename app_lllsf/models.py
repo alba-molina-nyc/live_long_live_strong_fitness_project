@@ -107,7 +107,7 @@ class FitnessBlogComment(models.Model):
     comment_body = models.TextField()
     parent_comment = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, related_name='replies')
     blog = models.ForeignKey(FitnessBlog, on_delete=models.CASCADE, related_name='comments', default=1)
-
+    icon = models.CharField(max_length=50, default='fa-light fa-user-astronaut')
     def __str__(self):
         return f"{self.name} - {self.date_posted}"
 
