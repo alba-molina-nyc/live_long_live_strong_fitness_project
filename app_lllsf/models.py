@@ -126,7 +126,9 @@ class RecipeItem(models.Model):
     ]
     name = models.CharField(max_length=200)
     item_type = models.CharField(max_length=10, choices=ITEM_TYPE_CHOICES)
-    image = models.ImageField(upload_to='portfolio_images/')
+    image_finished = models.ImageField(upload_to='portfolio_images/')
+    image_ingredients = models.ImageField(upload_to='portfolio_images/', default='image_finished')
+    image_process = models.ImageField(upload_to='portfolio_images/', default='image_finished')
     preview_link = models.URLField()
     description = models.TextField(blank=True)
     ingredient_1 = models.TextField(blank=True)
