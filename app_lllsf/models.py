@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+
 
 class AboutUs(models.Model):
     title = models.CharField(max_length=200)
@@ -75,7 +77,7 @@ class FitnessBlog(models.Model):
         ('exercise', 'Exercise'),
         ('lifestyle', 'Lifestyle'),
     )
-
+    date_posted = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255, default='')
     description = models.TextField()
