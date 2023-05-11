@@ -37,6 +37,16 @@ class Service(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     icon_class = models.CharField(max_length=50)
+    paragraph_1 = models.TextField(blank=True)
+    paragraph_2 = models.TextField(blank=True)
+    paragraph_3 = models.TextField(blank=True)
+    paragraph_4 = models.TextField(blank=True)
+    paragraph_5 = models.TextField(blank=True)
+    paragraph_6 = models.TextField(blank=True)
+    paragraph_7 = models.TextField(blank=True)
+    paragraph_8 = models.TextField(blank=True)
+    paragraph_9 = models.TextField(blank=True)
+    image = models.ImageField(upload_to='imgs/services/', null=True, blank=True)
 
     def __str__(self):
         return self.title

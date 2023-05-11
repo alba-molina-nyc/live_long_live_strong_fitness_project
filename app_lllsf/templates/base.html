@@ -69,6 +69,8 @@
   </head>
 
   <body>
+
+    {% block header %}
     <!-- ======= 🚧 Header 🚧 ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container d-flex align-items-center">
@@ -128,6 +130,7 @@
       </div>
     </header>
     <!-- End Header -->
+    {% endblock %}
 
     <!-- ======= ✅ Hero Section ✅ ======= -->
     <section
@@ -626,7 +629,7 @@
 
     </main>
     <!-- End #main -->
-
+   {% block footer %}
     <!-- ======= 🚧 Footer 🚧 ======= -->
     <footer id="footer">
       <div class="footer-top">
@@ -704,7 +707,7 @@
       </div>
     </footer>
     <!-- End Footer -->
-
+    {% endblock %}
     <a
       href="#"
       class="back-to-top d-flex align-items-center justify-content-center"
