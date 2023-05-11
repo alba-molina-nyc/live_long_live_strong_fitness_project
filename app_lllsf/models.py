@@ -7,7 +7,7 @@ class AboutUs(models.Model):
     description = models.TextField()
     bullet_point_one = models.CharField(max_length=200)
     bullet_point_two = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='about_images/')
+    image = models.ImageField(upload_to='imgs/about_us_images/')
 
     def __str__(self):
         return f'About Us Section : {self.title} '
@@ -27,7 +27,7 @@ class Hero(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200)
     button_text = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='images/', default='default_image.jpg')
+    image = models.ImageField(upload_to='imgs/hero_images/', default='default_image.jpg')
 
     def __str__(self):
         return f'Hero Section - {self.title}'
@@ -44,7 +44,7 @@ class Service(models.Model):
 
 class Exercise(models.Model):
     exercise_type = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='exercises/', null=True, blank=True)
+    image = models.ImageField(upload_to='imgs/exercises/', null=True, blank=True)
     title = models.CharField(max_length=100)
     description = models.TextField()
     bullet_point_one = models.CharField(max_length=100)
@@ -56,7 +56,7 @@ class Exercise(models.Model):
 
 class Testimonial(models.Model):
     quote = models.TextField()
-    image = models.ImageField(upload_to='testimonials/')
+    image = models.ImageField(upload_to='imgs/testimonials/')
     name = models.CharField(max_length=255)
     job_title = models.CharField(max_length=255)
     age = models.PositiveIntegerField(null=True, blank=True)
@@ -82,8 +82,8 @@ class FitnessBlog(models.Model):
     author = models.CharField(max_length=255, default='')
     description = models.TextField()
     icon = models.CharField(max_length=50)
-    image_1 = models.ImageField(upload_to='fitnessblogs/', default='default_image.jpg')
-    image_2 = models.ImageField(upload_to='fitnessblogs/', default='default_image.jpg')
+    image_1 = models.ImageField(upload_to='imgs/fitnessblogs/', default='default_image.jpg')
+    image_2 = models.ImageField(upload_to='imgs/fitnessblogs/', default='default_image.jpg')
     category = models.CharField(max_length=20, choices=CATEGORIES, default='')
     paragraph_1 = models.TextField(blank=True)
     paragraph_2 = models.TextField(blank=True)
@@ -126,9 +126,9 @@ class RecipeItem(models.Model):
     ]
     name = models.CharField(max_length=200)
     item_type = models.CharField(max_length=10, choices=ITEM_TYPE_CHOICES)
-    image_finished = models.ImageField(upload_to='portfolio_images/')
-    image_ingredients = models.ImageField(upload_to='portfolio_images/', default='image_finished')
-    image_process = models.ImageField(upload_to='portfolio_images/', default='image_finished')
+    image_finished = models.ImageField(upload_to='imgs/portfolio_images/')
+    image_ingredients = models.ImageField(upload_to='imgs/portfolio_images/', default='image_finished')
+    image_process = models.ImageField(upload_to='imgs/portfolio_images/', default='image_finished')
     preview_link = models.URLField()
     description = models.TextField(blank=True)
     ingredient_1 = models.TextField(blank=True)
