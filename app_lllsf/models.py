@@ -81,7 +81,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-
+#TODO: video section
 class FitnessBlog(models.Model):
     CATEGORIES = (
         ('nutrition', 'Nutrition'),
