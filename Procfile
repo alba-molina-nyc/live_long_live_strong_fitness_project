@@ -1,0 +1,1 @@
+web: gunicorn live_long_live_strong_fitness_project.wsgi
