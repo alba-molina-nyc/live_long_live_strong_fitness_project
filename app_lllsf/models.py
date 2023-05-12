@@ -20,7 +20,7 @@ class IconBox(models.Model):
     icon_class = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.title
+        return f'About Us Icons : {self.title} '
 
 
 class Hero(models.Model):
