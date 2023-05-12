@@ -64,6 +64,7 @@ class Exercise(models.Model):
     def __str__(self):
         return self.title
 
+#TODO: create testimonial form so that the user can write testimonial directly on website
 class Testimonial(models.Model):
     quote = models.TextField()
     image = models.ImageField(upload_to='imgs/testimonials/')
@@ -122,7 +123,7 @@ class FitnessBlogComment(models.Model):
         return f"{self.name} - {self.date_posted}"
 
 
-
+# TODO: preview link get rid of it 
 class RecipeItem(models.Model):
     BREAKFAST = 'breakfast'
     LUNCH = 'lunch'
