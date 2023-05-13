@@ -227,7 +227,7 @@
 }
 
 .gslide-inline {
-  background: #fff;
+  background: #10172B;
   text-align: left;
   max-height: calc(100vh - 40px);
   overflow: auto;
@@ -259,7 +259,7 @@
   display: flex;
   width: 100%;
   min-width: 100%;
-  background: #fff;
+  background: #10172B;
   padding: 0;
   overflow: auto;
   max-height: 75vh;
@@ -501,7 +501,7 @@ iframe.wait-autoplay {
 /*Skin */
 
 .glightbox-clean .gslide-description {
-  background: #fff;
+  background: #10172B;
 }
 
 .glightbox-clean .gdesc-inner {

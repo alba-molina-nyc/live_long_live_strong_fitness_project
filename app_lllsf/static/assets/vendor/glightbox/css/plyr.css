@@ -570,7 +570,7 @@ a.plyr__control:before {
 }
 
 .plyr__menu__container .plyr__control[role='menuitemradio']:after {
-  background: #fff;
+  background: #10172B;
   border: 0;
   height: 6px;
   left: 12px;
@@ -672,8 +672,8 @@ a.plyr__control:before {
 .plyr--full-ui input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  background: #fff;
-  background: #fff;
+  background: #10172B;
+  background: #10172B;
   background: var(--plyr-range-thumb-background, #fff);
   border: 0;
   border-radius: 100%;
@@ -713,8 +713,8 @@ a.plyr__control:before {
 }
 
 .plyr--full-ui input[type='range']::-moz-range-thumb {
-  background: #fff;
-  background: #fff;
+  background: #10172B;
+  background: #10172B;
   background: var(--plyr-range-thumb-background, #fff);
   border: 0;
   border-radius: 100%;
@@ -779,8 +779,8 @@ a.plyr__control:before {
 }
 
 .plyr--full-ui input[type='range']::-ms-thumb {
-  background: #fff;
-  background: #fff;
+  background: #10172B;
+  background: #10172B;
   background: var(--plyr-range-thumb-background, #fff);
   border: 0;
   border-radius: 100%;
@@ -1157,8 +1157,8 @@ a.plyr__control:before {
 }
 
 .plyr--audio .plyr__controls {
-  background: #fff;
-  background: #fff;
+  background: #10172B;
+  background: #10172B;
   background: var(--plyr-audio-controls-background, #fff);
   border-radius: inherit;
   color: #4a5464;

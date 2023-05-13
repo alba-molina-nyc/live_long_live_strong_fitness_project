@@ -83,13 +83,13 @@ section {
 
 .scroll-top i {
   font-size: 24px;
-  color: #fff;
+  color: #10172B;
   line-height: 0;
 }
 
 .scroll-top:hover {
   background: rgba(var(--color-primary-rgb), 0.8);
-  color: #fff;
+  color: #10172B;
 }
 
 .scroll-top.active {
@@ -1173,7 +1173,7 @@ section {
   background: var(--color-primary);
   border: 0;
   padding: 10px 30px;
-  color: #fff;
+  color: #10172B;
   transition: 0.4s;
   cursor: pointer;
 }
