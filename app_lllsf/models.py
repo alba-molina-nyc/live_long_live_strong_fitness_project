@@ -80,7 +80,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-#TODO: video section
 class FitnessBlog(models.Model):
     CATEGORIES = (
         ('nutrition', 'Nutrition'),
@@ -141,7 +140,7 @@ class RecipeItem(models.Model):
     image_finished = models.ImageField(upload_to='imgs/portfolio_images/')
     image_ingredients = models.ImageField(upload_to='imgs/portfolio_images/', default='image_finished')
     image_process = models.ImageField(upload_to='imgs/portfolio_images/', default='image_finished')
-    preview_link = models.URLField()
+    # preview_link = models.URLField()
     description = models.TextField(blank=True)
     ingredient_1 = models.TextField(blank=True)
     ingredient_2 = models.TextField(blank=True)
