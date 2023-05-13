@@ -87,7 +87,7 @@ class FitnessBlog(models.Model):
         ('exercise', 'Exercise'),
         ('lifestyle', 'Lifestyle'),
     )
-    date_posted = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255, default='')
     description = models.TextField()
@@ -104,7 +104,6 @@ class FitnessBlog(models.Model):
     paragraph_7 = models.TextField(blank=True)
     paragraph_8 = models.TextField(blank=True)
     paragraph_9 = models.TextField(blank=True)
-    #video
     video = models.FileField(upload_to='videos/', null=True, blank=True)
 
     def __str__(self):
@@ -139,7 +138,6 @@ class RecipeItem(models.Model):
     image_finished = models.ImageField(upload_to='imgs/portfolio_images/')
     image_ingredients = models.ImageField(upload_to='imgs/portfolio_images/', default='image_finished')
     image_process = models.ImageField(upload_to='imgs/portfolio_images/', default='image_finished')
-    # preview_link = models.URLField()
     description = models.TextField(blank=True)
     ingredient_1 = models.TextField(blank=True)
     ingredient_2 = models.TextField(blank=True)
@@ -161,11 +159,6 @@ class RecipeItem(models.Model):
     paragraph_8 = models.TextField(blank=True)
     paragraph_9 = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-
-
-
-
-
 
     def __str__(self):
         return f'{self.name} - {self.item_type}'

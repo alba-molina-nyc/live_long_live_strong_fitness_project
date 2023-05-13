@@ -28,7 +28,7 @@ def base(request):
     services = Service.objects.order_by('created_at')[:3]
     exercises = Exercise.objects.all()
     testimonials = Testimonial.objects.all()
-    fitnessblogs = FitnessBlog.objects.all()
+    fitnessblogs = FitnessBlog.objects.order_by('created_at')[:3]
     items = RecipeItem.objects.order_by('-created_at')[:3]
     form = ContactUsForm(request.POST or None)
 
@@ -47,6 +47,13 @@ def base(request):
 
     return render(request, 'base.html', context)
    
+def blogs(request):
+    fitnessblogs = FitnessBlog.objects.all()
+
+    context = {
+        'fitnessblogs': fitnessblogs,
+    }
+    return render(request, 'blogs.html', context)
 
 def blog_detail(request, pk):
     blog_detail = FitnessBlog.objects.get(id=pk)
