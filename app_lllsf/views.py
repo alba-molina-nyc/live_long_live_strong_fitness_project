@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import AboutUs, Hero, Service, Exercise, Testimonial, FitnessBlog, RecipeItem, Category, FitnessBlogComment, ContactUs
-from .forms import CommentForm, ContactUsForm
+from .forms import CommentForm, ContactUsForm, TestimonialForm
 
 from django.core.mail import send_mail # contactform
 from django.conf import settings # contactform
@@ -74,7 +74,16 @@ def recipe_detail(request, pk):
     return render(request, 'recipe_detail.html', {'recipe_detail': recipe_detail,})
 # https://fontawesome.com/icons/dumbbell?f=classic&s=solid
 
+def add_testimonial(request):
+    if request.method == 'POST':
+        form = TestimonialForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return render(request, 'success.html')
+    else:
+        form = TestimonialForm()
+    return render(request, 'add_testimonial.html', {'form': form})
 
-# TODO: contact function, paypal pay, paypal giftcard, get rid of lumia, change colors to dark blue and yellow
+# TODO: testimonial get rid of lumia, change colors to dark blue and yellow
 
 

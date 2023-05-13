@@ -1,5 +1,5 @@
 from django import forms
-from .models import FitnessBlogComment, ContactUs
+from .models import FitnessBlogComment, ContactUs, Testimonial
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -22,4 +22,12 @@ class ContactUsForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Phone Number'}),
             'subject': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Subject'}),
             'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Message'}),
+        }
+
+class TestimonialForm(forms.ModelForm):
+    class Meta:
+        model = Testimonial
+        fields = ('quote', 'image', 'name', 'job_title', 'age')
+        widgets = {
+            'quote': forms.Textarea(attrs={'rows': 3}),
         }

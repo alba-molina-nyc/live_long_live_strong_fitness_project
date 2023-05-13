@@ -10,6 +10,8 @@ urlpatterns = [
     path('service/<int:pk>/', views.service_detail, name ='service_detail'),
     path('recipe/<int:pk>/', views.recipe_detail, name ='recipe_detail'),
     path('contact-us/', views.contact_us, name='contact_us'),
+    path('add_testimonial/', views.add_testimonial, name='add_testimonial'),
+
 
 
 
