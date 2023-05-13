@@ -285,23 +285,6 @@
               athletes, and fitness buffs.
             </p>
           </div>
-          <div class="row">
-            {% for fitnessblog in fitnessblogs %}
-            <div
-              class="col-md-6 mt-4 {% if loop.index is even %}mt-lg-0{% endif %}"
-            >
-              <div class="icon-box">
-                <i class="{{ fitnessblog.icon }}"></i>
-                <h4>
-                  <a href="{% url 'blog_detail' fitnessblog.id %}"
-                    >{{ fitnessblog.title }}</a
-                  >
-                </h4>
-                <p>{{ fitnessblog.description }}</p>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
         </div>
         <!-- Button to blog detail -->
 <a href="{% url 'blogs' %}" class="btn btn-primary">All Blogs</a>
