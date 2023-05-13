@@ -95,7 +95,6 @@
               <h1 class="mb-5">    {{ blog_detail.title }}
               </h1>
               <p><span class="firstcharacter">A</span>{{ blog_detail.description }}</p>
-
               <figure class="my-4">
                 {% if blog_detail.image_1 %}
                 <img src="{{ blog_detail.image_1.url }}" class="img-fluid" alt="">
@@ -107,11 +106,20 @@
               <p>{{blog_detail.paragraph_2 }}</p>
               <p>{{blog_detail.paragraph_3 }}</p>
               <p>{{blog_detail.paragraph_4 }}.</p>
+             
               <figure class="my-4">
                 {% if blog_detail.image_2 %}
                 <img src="{{ blog_detail.image_2.url }}" class="img-fluid" alt="">
                 {% endif %}                
               </figure>
+               <!-- video -->
+               {% if blog_detail.video %}
+               <video width="320" height="240" controls>
+                   <source src="{{ blog_detail.video.url }}" type="video/mp4">
+                   Your browser does not support the video tag.
+               </video>
+               {% endif %}
+               
               <p>{{blog_detail.paragraph_5 }}</p>
               <p>{{blog_detail.paragraph_6 }}</p>
               <p>{{blog_detail.paragraph_7 }}</p>

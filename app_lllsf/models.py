@@ -64,7 +64,6 @@ class Exercise(models.Model):
     def __str__(self):
         return self.title
 
-#TODO: create testimonial form so that the user can write testimonial directly on website
 class Testimonial(models.Model):
     quote = models.TextField()
     image = models.ImageField(upload_to='imgs/testimonials/')
@@ -105,6 +104,8 @@ class FitnessBlog(models.Model):
     paragraph_7 = models.TextField(blank=True)
     paragraph_8 = models.TextField(blank=True)
     paragraph_9 = models.TextField(blank=True)
+    #video
+    video = models.FileField(upload_to='videos/', null=True, blank=True)
 
     def __str__(self):
         return self.title
