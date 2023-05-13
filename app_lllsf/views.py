@@ -23,7 +23,6 @@ def base(request):
     exercises = Exercise.objects.all()
     testimonials = Testimonial.objects.all()
     fitnessblogs = FitnessBlog.objects.all()
-    # items = RecipeItem.objects.all()
     items = RecipeItem.objects.order_by('-created_at')[:3]
     form = ContactUsForm(request.POST or None)
 
@@ -69,11 +68,27 @@ def service_detail(request, pk):
 
     return render(request, 'service_detail.html', {'service_detail': service_detail,})
 
+#javascript to sort through item_type choices does not work
+def recipes(request):
+    items = RecipeItem.objects.all()
+
+    context = {
+        'ITEM_TYPE_CHOICES': RecipeItem.ITEM_TYPE_CHOICES,
+        'items': items,
+    }
+    return render(request, 'recipes.html', context)
+
+
 
 def recipe_detail(request, pk):
     recipe_detail = RecipeItem.objects.get(id=pk)
 
     return render(request, 'recipe_detail.html', {'recipe_detail': recipe_detail,})
+
+
+
+
+
 # https://fontawesome.com/icons/dumbbell?f=classic&s=solid
 
 def add_testimonial(request):
