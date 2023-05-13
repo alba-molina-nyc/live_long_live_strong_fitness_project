@@ -47,6 +47,7 @@ class Service(models.Model):
     paragraph_8 = models.TextField(blank=True)
     paragraph_9 = models.TextField(blank=True)
     image = models.ImageField(upload_to='imgs/services/', null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

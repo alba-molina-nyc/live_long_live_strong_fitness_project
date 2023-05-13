@@ -15,11 +15,17 @@ def contact_us(request):
     context = {'form': form}
     return render(request, 'contact_us.html', context)
 
+def about_us(request):
+    about_us = AboutUs.objects.first()
+    context = {
+        'about_us': about_us,
+    }
+    return render(request, 'about_us.html', context)
 
 def base(request):
     about_us = AboutUs.objects.first()
     hero = Hero.objects.first()
-    services = Service.objects.all()
+    services = Service.objects.order_by('created_at')[:3]
     exercises = Exercise.objects.all()
     testimonials = Testimonial.objects.all()
     fitnessblogs = FitnessBlog.objects.all()
@@ -63,12 +69,20 @@ def blog_detail(request, pk):
 
     return render(request, 'blog_detail.html', {'blog_detail': blog_detail, 'category': category, 'comments': comments, 'comment_form': comment_form})
 
+def services(request):
+    services = Service.objects.all()
+
+    context = {
+        'services': services,
+    }
+    return render(request, 'services.html', context)
+
+
 def service_detail(request, pk):
     service_detail = Service.objects.get(id=pk)
 
     return render(request, 'service_detail.html', {'service_detail': service_detail,})
 
-#javascript to sort through item_type choices does not work
 def recipes(request):
     items = RecipeItem.objects.all()
 
