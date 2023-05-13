@@ -75,7 +75,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="index.html">LLLS</a></h1>
+        <h1><a href="{% url 'base' %}">LLLS</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -118,6 +118,92 @@
 
     </div>
   </header><!-- End Header -->
+
+
+
+
+
+  <section id="contact" class="contact section-bg">
+    <div class="container">
+  
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Start today!</p>  
+      </div>
+    
+      <div class="row mt-5 justify-content-center">
+    
+        <div class="col-lg-10">
+  
+          <div class="info-wrap">
+            <div class="row">
+              <div class="col-lg-4 info">
+                <i class="fas fa-map-marker-alt"></i>
+  
+  
+  
+                <h4>Location:</h4>
+                <p>The Bronx<br>New York, NY 535022</p>
+              </div>
+  
+              <div class="col-lg-4 info mt-4 mt-lg-0">
+                <i class="fas fa-envelope"></i>
+  
+                <h4>Email:</h4>
+                <p>info@example.com<br>contact@example.com</p>
+              </div>
+  
+              <div class="col-lg-4 info mt-4 mt-lg-0">
+                <i class="fas fa-phone"></i>
+  
+                <h4>Call:</h4>
+                <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+      <div class="row mt-5 justify-content-center">
+        {% if form.errors %}
+          <div class="error-message">
+            {% for field, error in form.errors.items %}
+              {{ field }}: {{ error }}
+            {% endfor %}
+          </div>
+        {% else %}
+          {% if message_sent %}
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          {% endif %}
+        {% endif %}
+  
+        <div class="col-lg-10">
+          <form method="post" action="{% url 'contact_us' %}">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 form-group">
+                {{ form.name }}
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                {{ form.email }}
+              </div>
+              <div class="col-md-6 form-group">
+                <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone" required>
+              </div>
+              <div class="col-md-6 form-group">
+                {{ form.subject }}
+              </div>
+              <div class="col-md-12 form-group">
+                {{ form.message }}
+              </div>
+              <div class="text-center"><button type="submit" class="btn btn-primary btn-sm">Submit</button></div>
+            </div>
+          </form>
+        </div>
+  
+      </div>
+  </section>
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
