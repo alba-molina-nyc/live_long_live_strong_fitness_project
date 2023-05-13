@@ -84,6 +84,6 @@ def add_testimonial(request):
         form = TestimonialForm()
     return render(request, 'add_testimonial.html', {'form': form})
 
-# TODO: testimonial get rid of lumia, change colors to dark blue and yellow
+# TODO:change colors to dark blue and yellow
 
 

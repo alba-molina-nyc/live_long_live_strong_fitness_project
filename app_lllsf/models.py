@@ -122,8 +122,6 @@ class FitnessBlogComment(models.Model):
     def __str__(self):
         return f"{self.name} - {self.date_posted}"
 
-
-# TODO: preview link get rid of it 
 class RecipeItem(models.Model):
     BREAKFAST = 'breakfast'
     LUNCH = 'lunch'
