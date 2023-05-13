@@ -11,7 +11,7 @@ def contact_us(request):
     form = ContactUsForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
         form.save()
-        return render(request, 'contact_success.html')
+        return render(request, 'success.html')
     context = {'form': form}
     return render(request, 'contact_us.html', context)
 
