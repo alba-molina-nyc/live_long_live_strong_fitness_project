@@ -83,13 +83,13 @@ section {
 
 .scroll-top i {
   font-size: 24px;
-  color: #10172B;
+  color: #fff;
   line-height: 0;
 }
 
 .scroll-top:hover {
   background: rgba(var(--color-primary-rgb), 0.8);
-  color: #10172B;
+  color: #fff;
 }
 
 .scroll-top.active {
@@ -131,7 +131,7 @@ section {
   height: 90px;
   transition: all 0.5s;
   z-index: 997;
-  background: #f2f2f2;
+  background: #10172B;
 }
 
 .header.sticked {
@@ -1173,7 +1173,7 @@ section {
   background: var(--color-primary);
   border: 0;
   padding: 10px 30px;
-  color: #10172B;
+  color: #fff;
   transition: 0.4s;
   cursor: pointer;
 }
