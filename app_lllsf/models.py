@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+from datetime import datetime
 
 class AboutUs(models.Model):
     title = models.CharField(max_length=200)
@@ -159,6 +159,9 @@ class RecipeItem(models.Model):
     paragraph_7 = models.TextField(blank=True)
     paragraph_8 = models.TextField(blank=True)
     paragraph_9 = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
 
 
 

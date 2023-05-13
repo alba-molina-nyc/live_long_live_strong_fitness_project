@@ -23,8 +23,10 @@ def base(request):
     exercises = Exercise.objects.all()
     testimonials = Testimonial.objects.all()
     fitnessblogs = FitnessBlog.objects.all()
-    items = RecipeItem.objects.all()
+    # items = RecipeItem.objects.all()
+    items = RecipeItem.objects.order_by('-created_at')[:3]
     form = ContactUsForm(request.POST or None)
+
 
     context = {
         'about_us': about_us,
