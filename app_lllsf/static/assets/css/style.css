@@ -1,7 +1,7 @@
 /**
-* Template Name: Lumia
+* Template Name: live long, live strong fitness
 * Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
+* Template URL: https://bootstrapmade.com/live long, live strong fitness-bootstrap-business-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
