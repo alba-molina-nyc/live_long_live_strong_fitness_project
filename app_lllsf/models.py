@@ -66,11 +66,11 @@ class Exercise(models.Model):
         return self.title
 
 class Testimonial(models.Model):
-    quote = models.TextField()
-    image = models.ImageField(upload_to='imgs/testimonials/')
     name = models.CharField(max_length=255)
     job_title = models.CharField(max_length=255)
     age = models.PositiveIntegerField(null=True, blank=True)
+    image = models.ImageField(upload_to='imgs/testimonials/')
+    quote = models.TextField()
 
     def __str__(self):
         return self.name

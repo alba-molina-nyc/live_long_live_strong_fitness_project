@@ -27,7 +27,7 @@ class ContactUsForm(forms.ModelForm):
 class TestimonialForm(forms.ModelForm):
     class Meta:
         model = Testimonial
-        fields = ('quote', 'image', 'name', 'job_title', 'age')
+        fields = ('name', 'job_title', 'age', 'quote', 'image',)
         widgets = {
             'quote': forms.Textarea(attrs={'rows': 3}),
         }
