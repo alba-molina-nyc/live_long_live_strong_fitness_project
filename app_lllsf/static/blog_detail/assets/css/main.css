@@ -119,10 +119,9 @@ section {
 }
 
 .btn.btn-primary {
-  background-color: #FEA115; 
-  /* here */
+  background-color: var(--color-black);
   color: var(--color-white);
-  border-color: #fff;
+  border-color: var(--color-black);
 }
 
 /*--------------------------------------------------------------
@@ -132,7 +131,7 @@ section {
   height: 90px;
   transition: all 0.5s;
   z-index: 997;
-  background: #FEA115;
+  background: #f2f2f2;
 }
 
 .header.sticked {

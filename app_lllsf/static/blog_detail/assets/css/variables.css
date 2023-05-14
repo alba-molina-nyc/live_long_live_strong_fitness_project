@@ -29,15 +29,15 @@
   /* The *-rgb color names are simply the RGB converted value of the corresponding color for use in the rgba() function */
 
   /* Default text color */
-  --color-default: #fff;
+  --color-default: #212529;
   --color-default-rgb: 33, 37, 41;
 
   /* Defult links color */
-  --color-links: #fff;
+  --color-links: #212529;
   --color-links-hover: #15171a;
 
   /* Primay colors */
-  --color-primary: #fff;
+  --color-primary: #212529;
   --color-primary-light: #26282c;
   --color-primary-dark: #0b0c0e;
 
@@ -120,7 +120,7 @@
   --bs-gray-600: #6c757d;
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
-  --bs-gray-900: #fff;
+  --bs-gray-900: #212529;
   --bs-primary: var(--color-blue);
   --bs-secondary: var(--color-blue);
   --bs-success: #198754;
@@ -128,7 +128,7 @@
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
-  --bs-dark: #fff;
+  --bs-dark: #212529;
   --bs-primary-rgb: var(--color-primary-rgb);
   --bs-secondary-rgb: var(--color-secondary-rgb);
   --bs-success-rgb: 25, 135, 84;
