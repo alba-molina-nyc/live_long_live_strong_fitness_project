@@ -118,15 +118,23 @@
     {% block extra_scripts %}{% endblock %}
 
     <section></section>
-    <div class="container d-flex justify-content-center align-items-center">
-      <section id="">
-        <h1>Add Testimonial</h1>
-        <form method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </section>
+    <section class="section-bg" id="contact">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="section-heading">
+              <h2>Add testimonial</h2>
+            </div>
+            <form class="contact-form" method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     </div>
     
     <footer id="footer">
