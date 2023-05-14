@@ -38,6 +38,12 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    .icon-box {
+      margin-bottom: 30px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -75,7 +81,7 @@
 
 
   <main id="main">
-
+    <section></section>
     <!-- ======= What We Do Section ======= -->
     <section id="what-we-do" class="what-we-do">
       <div class="container">
@@ -85,7 +91,6 @@
           <p>{{ about_us.description }}</p>
         </div>
         <div class="row">
-          <a href="{% url 'services' %}" class="btn-get-started">View all</a> <!-- TODO: fix -->
           {% for service in services %}
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
@@ -179,7 +184,6 @@
       </div>
     </div>
   </footer><!-- End Footer -->
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
