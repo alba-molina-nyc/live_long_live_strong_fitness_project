@@ -35,6 +35,7 @@ DEBUG = True
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = [
     'https://mysterious-mesa-53355.herokuapp.com/',
+    'https://www.livelonglivestrong.nyc/',
 ]
 
 
