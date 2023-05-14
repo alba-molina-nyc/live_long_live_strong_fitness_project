@@ -122,7 +122,7 @@ section {
   background-color: #FEA115; 
   /* here */
   color: var(--color-white);
-  border-color: var(--color-black);
+  border-color: #fff;
 }
 
 /*--------------------------------------------------------------
