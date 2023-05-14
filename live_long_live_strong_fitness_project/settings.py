@@ -36,6 +36,11 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'https://mysterious-mesa-53355.herokuapp.com/',
     'https://www.livelonglivestrong.nyc/',
+    'https://www.livelonglivestrong.nyc',
+    'www.livelonglivestrong.nyc',
+    'www.livelonglivestrong.nyc/',
+    'livelonglivestrong.nyc/',
+    'livelonglivestrong.nyc',
 ]
 
 
