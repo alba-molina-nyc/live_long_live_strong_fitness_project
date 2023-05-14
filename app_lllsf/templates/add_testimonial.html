@@ -66,16 +66,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  <style>
-    /* target the button within the form */
-    form button[type="submit"] {
-      background-color: #FEA115; /* set background color */
-      color: #fff; /* set text color */
-    }
-
-  
-  </style>  
-</head>
+  </head>
 
   <body>
 
@@ -117,26 +108,24 @@
     <script src="{% static 'assets/js/main.js' %}"></script>
     {% block extra_scripts %}{% endblock %}
 
-    <section></section>
-    <section class="section-bg" id="contact">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 col-md-8 col-sm-10">
-            <div class="section-heading">
-              <h2>Add testimonial</h2>
-            </div>
-            <form class="contact-form" method="post">
+    <main id="main">
+      <section></section>
+        <section id="">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <h2 style="text-align: center;">Your Heading Here</h2>
+            <form method="post" enctype="multipart/form-data" style="width: 50%;">
               {% csrf_token %}
               {{ form.as_p }}
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" style="background-color: #FEA115;">Submit</button>
             </form>
           </div>
-        </div>
-      </div>
-    </section>
-    
-    </div>
-    
+          
+            
+   
+</section>
+
+    </main>
+  
     <footer id="footer">
         <div class="footer-top">
           <div class="container">
